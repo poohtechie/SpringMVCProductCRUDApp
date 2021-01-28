@@ -45,7 +45,7 @@ public class ProductController {
 	@RequestMapping(value = "/processProduct", method = RequestMethod.POST)
 	public RedirectView processAddUpdateProduct(@ModelAttribute ProductBean productBean, HttpServletRequest request) {
 		System.out.println(productBean);
-
+		
 		/* Insert product in database */
 		productDao.insertOrUpdateProduct(productBean);
 
@@ -62,6 +62,7 @@ public class ProductController {
 	/* Show Update Product Form */
 	@RequestMapping("/updateProduct/{productId}")
 	public String updateProduct(@PathVariable("productId") int productId, Model model) {
+		
 		/* Get Product data and send it to the view */
 		ProductBean getProductBean = this.productDao.getSingleProduct(productId);
 		model.addAttribute("productBeanKey", getProductBean);
