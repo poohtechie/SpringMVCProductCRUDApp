@@ -36,6 +36,7 @@ public class ProductController {
 	/* Show Add Product Form */
 	@RequestMapping("/addProduct")
 	public String addProduct(Model model) {
+		/*Send title to view*/
 		model.addAttribute("titleKey", "Add Product");
 		return "add_product_form";
 	}
