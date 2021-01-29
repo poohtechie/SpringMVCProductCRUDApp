@@ -63,7 +63,7 @@ public class ProductController {
 	@RequestMapping("/updateProduct/{productId}")
 	public String updateProduct(@PathVariable("productId") int productId, Model model) {
 		
-		/* Get Product data and send it to the view */
+		/* Get Product data and send product data & title to the view */
 		ProductBean getProductBean = this.productDao.getSingleProduct(productId);
 		model.addAttribute("productBeanKey", getProductBean);
 		model.addAttribute("titleKey", "Edit Product");
